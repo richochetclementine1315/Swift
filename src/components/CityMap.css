@@ -1,0 +1,187 @@
+.city-map {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  height: fit-content;
+  min-height: 600px;
+}
+
+.city-map-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  text-align: center;
+}
+
+.loading-spinner {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+.map-header {
+  margin-bottom: 1.5rem;
+}
+
+.map-header h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.legend-color {
+  width: 20px;
+  height: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0f0f23, #1a1a2e);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.city-grid {
+  background: linear-gradient(45deg, #0f0f23 25%, #16213e 25%, #16213e 50%, #0f0f23 50%, #0f0f23 75%, #16213e 75%);
+  background-size: 40px 40px;
+  border-radius: 8px;
+}
+
+/* Road styles */
+.road {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.road:hover {
+  stroke-width: 6;
+  filter: brightness(1.2);
+}
+
+.route-road {
+  filter: drop-shadow(0 0 10px #FFD700);
+}
+
+/* Intersection styles */
+.intersection {
+  transition: all 0.3s ease;
+}
+
+.route-intersection {
+  filter: drop-shadow(0 0 8px #FFD700);
+}
+
+/* Emergency center styles */
+.emergency-center {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emergency-center:hover {
+  r: 22;
+  filter: brightness(1.2) drop-shadow(0 0 15px currentColor);
+}
+
+.emergency-center.selected {
+  filter: drop-shadow(0 0 20px #FF6B35);
+}
+
+.emergency-icon {
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.emergency-label {
+  pointer-events: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Incident styles */
+.incident {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.incident:hover {
+  r: 20;
+  filter: brightness(1.2) drop-shadow(0 0 15px currentColor);
+}
+
+.incident.selected {
+  filter: drop-shadow(0 0 20px #FF6B35);
+}
+
+.incident-icon {
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.incident-label {
+  pointer-events: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Animation classes */
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+.calculating {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .city-map {
+    padding: 1rem;
+  }
+  
+  .city-grid {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+  
+  .map-legend {
+    justify-content: center;
+  }
+  
+  .legend-item {
+    font-size: 0.8rem;
+  }
+  
+  .emergency-label,
+  .incident-label {
+    font-size: 10px;
+  }
+}
