@@ -1,4 +1,6 @@
-# 🚨 Emergency Response Fast-Route System
+# <div align="center"> <img width="408" height="407" alt="Screenshot 2026-02-15 032213" src="https://github.com/user-attachments/assets/d39eb3c0-b76b-4c82-9e3e-19725849a8a7" />
+
+</div>
 
 A React-based emergency response system that uses **Dijkstra's algorithm** with a **priority queue** to find the fastest routes for emergency vehicles through a simulated city.
 
